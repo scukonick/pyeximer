@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 __author__ = 'scukonick'
 
 
@@ -27,7 +29,8 @@ EOL1 = b'\n'
 
 # Configuring logging
 log = logging.getLogger()
-ch = logging.RotatingFileHandler(logfile,maxBytes=10*1024*1024,backupCount=3)
+ch = logging.FileHandler(logfile)
+
 log.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 ch.setFormatter(formatter)
